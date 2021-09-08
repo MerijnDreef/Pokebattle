@@ -14,3 +14,11 @@ C:\data\source\jaar 2\Pokebattle\obj\Debug\net5.0\Pokebattle.dll
 C:\data\source\jaar 2\Pokebattle\obj\Debug\net5.0\ref\Pokebattle.dll
 C:\data\source\jaar 2\Pokebattle\obj\Debug\net5.0\Pokebattle.pdb
 C:\data\source\jaar 2\Pokebattle\obj\Debug\net5.0\Pokebattle.genruntimeconfig.cache
+C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\Pokebattle.csproj.AssemblyReference.cache
+C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\Pokebattle.GeneratedMSBuildEditorConfig.editorconfig
+C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\Pokebattle.AssemblyInfoInputs.cache
+C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\Pokebattle.AssemblyInfo.cs
+C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\Pokebattle.csproj.CoreCompileInputs.cache
+C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\Pokebattle.dll
+C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\ref\Pokebattle.dll
+C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\Pokebattle.pdb

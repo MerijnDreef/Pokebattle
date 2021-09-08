@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\data\\source\\jaar 2\\Pokebattle\\Pokebattle.csproj",
+      "projectUniqueName": "C:\\data\\source\\jaar_2\\Pokebattle\\Pokebattle\\Pokebattle.csproj",
       "projectName": "Pokebattle",
-      "projectPath": "C:\\data\\source\\jaar 2\\Pokebattle\\Pokebattle.csproj",
+      "projectPath": "C:\\data\\source\\jaar_2\\Pokebattle\\Pokebattle\\Pokebattle.csproj",
       "packagesPath": "C:\\Users\\merijn\\.nuget\\packages\\",
-      "outputPath": "C:\\data\\source\\jaar 2\\Pokebattle\\obj\\",
+      "outputPath": "C:\\data\\source\\jaar_2\\Pokebattle\\Pokebattle\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\merijn\\AppData\\Roaming\\NuGet\\NuGet.Config"
