@@ -22,3 +22,11 @@ C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\Pokebattle.csproj.C
 C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\Pokebattle.dll
 C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\ref\Pokebattle.dll
 C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\Pokebattle.pdb
+C:\data\source\jaar_2\Pokebattle\Pokebattle\bin\Debug\net5.0\Pokebattle.exe
+C:\data\source\jaar_2\Pokebattle\Pokebattle\bin\Debug\net5.0\Pokebattle.deps.json
+C:\data\source\jaar_2\Pokebattle\Pokebattle\bin\Debug\net5.0\Pokebattle.runtimeconfig.json
+C:\data\source\jaar_2\Pokebattle\Pokebattle\bin\Debug\net5.0\Pokebattle.runtimeconfig.dev.json
+C:\data\source\jaar_2\Pokebattle\Pokebattle\bin\Debug\net5.0\Pokebattle.dll
+C:\data\source\jaar_2\Pokebattle\Pokebattle\bin\Debug\net5.0\ref\Pokebattle.dll
+C:\data\source\jaar_2\Pokebattle\Pokebattle\bin\Debug\net5.0\Pokebattle.pdb
+C:\data\source\jaar_2\Pokebattle\Pokebattle\obj\Debug\net5.0\Pokebattle.genruntimeconfig.cache
