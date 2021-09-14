@@ -22,6 +22,7 @@ namespace Pokebattle.pokemons
 
         public void Damage(string PokemonDamage ,int Attack ) {
             // the string is for the one that TAKES damage and with what attack, now to put it in code :I
+            Health -= (Damage * Multiplier);
         }
     }
 }
