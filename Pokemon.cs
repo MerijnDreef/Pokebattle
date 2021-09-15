@@ -20,9 +20,10 @@ namespace Pokebattle.pokemons
             Health = hitpoints;
         }
 
-        public void Damage(string PokemonDamage ,int Attack ) {
+        public void Damage(string PokemonDamage, string EnergyType, int Attack) {
             // the string is for the one that TAKES damage and with what attack, now to put it in code :I
-            Health -= (Damage * Multiplier);
+            // I need to check for EnergyType here, but how to write that here
+            Health -= (Damage * Multiplier - Resistance);
         }
     }
 }
