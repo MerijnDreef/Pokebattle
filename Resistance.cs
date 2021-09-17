@@ -1,9 +1,9 @@
 
-namespace Pokebattle.Resistances
+namespace Pokebattle
 {
     public class resistance 
     {
-        public string Resistance { get; set; }
+        public string TypeName { get; set; }
         public int Resisting { get; set; }
 
     }

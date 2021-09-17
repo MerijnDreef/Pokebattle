@@ -1,9 +1,9 @@
 
-namespace Pokebattle.Weaknesses
+namespace Pokebattle
 {
     public class weakness 
     {
-        public string Weakness { get; set; }
+        public string TypeName { get; set; }
         public int Multiplier { get; set; }
 
     }

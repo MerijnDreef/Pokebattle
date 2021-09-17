@@ -1,5 +1,5 @@
 
-namespace Pokebattle.EnergyTypes
+namespace Pokebattle
 {
     public class energytype 
     {

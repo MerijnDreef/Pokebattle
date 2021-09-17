@@ -1,5 +1,5 @@
 
-namespace Pokebattle.Attacks 
+namespace Pokebattle
 {
     public class attack 
     {
