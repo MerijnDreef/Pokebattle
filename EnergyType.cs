@@ -1,9 +1,22 @@
 
 namespace Pokebattle
 {
-    public class energytype 
+    public class Energytype 
     {
-        public string EnergyType { get; set; }
+        public Energytype(string type) 
+        {
+            Type = type;
+        }
+        public string Type { get; set; }
 
+       /* public getEnergyType()
+        {
+           return this->EnergyType;
+        }
+
+        public setEnergyType()
+        {
+            
+        }*/
     }
 }

@@ -1,10 +1,15 @@
 
 namespace Pokebattle
 {
-    public class resistance 
+    public class Resistance 
     {
-        public string TypeName { get; set; }
-        public int Resisting { get; set; }
+        public Resistance(Energytype type, int resisting)
+        {
+            Type = type;
+            Resisting = resisting;
+        }
+        public Energytype Type { get; private set; }
+        public float Resisting { get; set; }
 
     }
 }

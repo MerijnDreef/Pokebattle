@@ -1,10 +1,14 @@
-
 namespace Pokebattle
 {
-    public class weakness 
+    public class Weakness 
     {
-        public string TypeName { get; set; }
-        public int Multiplier { get; set; }
+        public Weakness(Energytype type, int multiplier)
+        {
+            Type = type;
+            Multiplier = multiplier;
+        }
+        public Energytype Type { get; set; }
+        public float Multiplier { get; set; }
 
     }
 }

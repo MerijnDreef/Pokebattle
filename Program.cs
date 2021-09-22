@@ -8,16 +8,16 @@ namespace Pokebattle
     {
         static void Main(string[] args)
         {
-            var pokemon = new pokemon("Pikachu", 60);
+            var energytype = new Energytype("Lightning");
+            Console.WriteLine(energytype.Type);
+            var pokemon = new pokemon("Pikachu", 60, energytype);
             Pokemons.Add(pokemon);
-            var energytype = new energytype() {EnergyType = "Lightning"};
-            var attack = new attack() {Name = "Slash"};
-            var resistance = new resistance() {TypeName = "Lightning Resistance"};
-            var weakness = new weakness() {TypeName = "Grass Weakness"};
-            pokemon.Name = pokemon;
+            var attack = new Attack("Slash", 30);
+            var resistance = new Resistance("Lightning", 20);
+            var weakness = new Weakness("Grass", 15);
             Console.WriteLine("Hello World!");
-            string host = Console.ReadLine();
-            Console.WriteLine($"{pokemon.Name}, {pokemon.HitPoints},"/* {energytype.EnergyType}, {attack.Name}, {resistance.Resistance}, {weakness.Weakness}"*/);
+            Console.ReadLine();
+            Console.WriteLine($"{pokemon.Name}, {pokemon.Health},"/* {energytype.EnergyType}, {attack.Name}, {resistance.Resistance}, {weakness.Weakness}"*/);
             Console.ReadKey();
         }
 
