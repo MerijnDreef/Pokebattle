@@ -2,7 +2,7 @@ namespace Pokebattle
 {
     public class Weakness 
     {
-        public Weakness(Energytype type, int multiplier)
+        public Weakness(Energytype type, float multiplier)
         {
             Type = type;
             Multiplier = multiplier;

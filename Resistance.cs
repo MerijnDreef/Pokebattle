@@ -9,7 +9,7 @@ namespace Pokebattle
             Resisting = resisting;
         }
         public Energytype Type { get; private set; }
-        public float Resisting { get; set; }
+        public int Resisting { get; set; }
 
     }
 }

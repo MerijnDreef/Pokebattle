@@ -43,7 +43,7 @@ namespace Pokebattle
             }
             foreach(var weakness in Weaknesses)
             {
-                if (weakness.Type == type) return weakness.Multiplier;
+                if (weakness.Type == type) return (int)weakness.Multiplier;
             }
 
             return 1;
