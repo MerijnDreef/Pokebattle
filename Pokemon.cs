@@ -39,11 +39,11 @@ namespace Pokebattle
         {
             foreach(var resistance in Resistances)
             {
-                if (resistance.Type == type) return resistance.Resisting;
+                if (resistance.TypeResist == type) return resistance.Resisting;
             }
             foreach(var weakness in Weaknesses)
             {
-                if (weakness.Type == type) return (int)weakness.Multiplier;
+                if (weakness.TypeWeak == type) return (int)weakness.Multiplier;
             }
 
             return 1;
