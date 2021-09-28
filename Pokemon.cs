@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-
 namespace Pokebattle
 {
     public class pokemon 
@@ -21,7 +20,6 @@ namespace Pokebattle
             Attacks = new List<Attack>(); 
             Resistances = new List<Resistance>();
             Weaknesses = new List<Weakness>();
-            
         }
 
         public void Damage(string PokemonDamage, Energytype type, int Attack) {
@@ -48,5 +46,26 @@ namespace Pokebattle
 
             return 1;
         }
+        /*public virtual void play(int happiness)
+        {
+            Health *= happiness;
+        }*/
+    }
+
+    public class Pikachu : pokemon
+    {
+        public Pikachu():base("Pikachu", 60, new Energytype("Lightning", "Fire", "Fighting"))
+        {
+
+
+            /*
+             * , new Attack("Slash", 30), new Resistance(energytype, 20), new Weakness(energytype, 1.5F)
+             */
+
+        }
+        /*public override void play(int happiness)
+        {
+            base.play(happiness);
+        }*/
     }
 }
