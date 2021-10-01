@@ -11,7 +11,7 @@ namespace Pokebattle
         private List<Resistance> Resistances { get; set; }
         private List<Weakness> Weaknesses { get; set; }
 
-        public pokemon(string name, int hitpoints, Energytype energytype)
+        public pokemon(string name, int hitpoints, Energytype energytype, Attack attack)
         {
             Name = name;
             HitPoints = hitpoints;
@@ -33,6 +33,7 @@ namespace Pokebattle
         {
             Attacks.Add(attack);
         }
+
         public int getAttackMultiplier(Energytype type)
         {
             foreach(var resistance in Resistances)
@@ -54,10 +55,11 @@ namespace Pokebattle
 
     public class Pikachu : pokemon
     {
-        public Pikachu():base("Pikachu", 60, new Energytype("Lightning", "Fire", "Fighting"))
+        public Pikachu():base("Pikachu", 60, new Energytype("Lightning", "Fighting", "Fire"), new Attack("Electric Ring", 50))
         {
 
-
+            
+           ;
             /*
              * , new Attack("Slash", 30), new Resistance(energytype, 20), new Weakness(energytype, 1.5F)
              */
@@ -67,5 +69,13 @@ namespace Pokebattle
         {
             base.play(happiness);
         }*/
+    }
+
+    public class Charmeleon : pokemon
+    {
+        public Charmeleon():base("Charmeleon", 60, new Energytype("Fire", "Lightning", "Water"), new Attack("Flare", 30))
+        {
+
+        }
     }
 }
