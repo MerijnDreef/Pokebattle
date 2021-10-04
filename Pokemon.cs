@@ -58,8 +58,8 @@ namespace Pokebattle
         public Pikachu():base("Pikachu", 60, new Energytype("Lightning", "Fighting", "Fire"), new Attack("Electric Ring", 50))
         {
 
-            
-           ;
+
+            Attacks.Add(new Attack() { Name = "Electric Ring", Damage = 50 });
             /*
              * , new Attack("Slash", 30), new Resistance(energytype, 20), new Weakness(energytype, 1.5F)
              */
