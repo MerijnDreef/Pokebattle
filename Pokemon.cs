@@ -7,19 +7,19 @@ namespace Pokebattle
         public Energytype Type { get; private set; }
         private int HitPoints { get; set; }
         public int Health { get; private set; }
-        private List<Attack> Attacks { get; set; }
-        private List<Resistance> Resistances { get; set; }
-        private List<Weakness> Weaknesses { get; set; }
+        internal List<Attack> Attacks { get; set; }
+        internal List<Resistance> Resistances { get; set; }
+        internal List<Weakness> Weaknesses { get; set; }
 
-        public pokemon(string name, int hitpoints, Energytype energytype, Attack attack)
+        public pokemon(string name, int hitpoints, Energytype energytype, List<Attack> attacks = null, List<Resistance> resistances = null, List<Weakness> weaknesses = null)
         {
             Name = name;
             HitPoints = hitpoints;
             Health = hitpoints;
             Type = energytype;
-            Attacks = new List<Attack>(); 
-            Resistances = new List<Resistance>();
-            Weaknesses = new List<Weakness>();
+            Attacks = attacks ?? new List<Attack>(); 
+            Resistances = resistances ?? new List<Resistance>();
+            Weaknesses = weaknesses ?? new List<Weakness>();
         }
 
         public void Damage(string PokemonDamage, Energytype type, int Attack) {
@@ -55,11 +55,13 @@ namespace Pokebattle
 
     public class Pikachu : pokemon
     {
-        public Pikachu():base("Pikachu", 60, new Energytype("Lightning", "Fighting", "Fire"), new Attack("Electric Ring", 50))
+        public Pikachu():base("Pikachu", 60, new Energytype("Lightning", "Fighting", "Fire"))
         {
 
-
-            Attacks.Add(new Attack() { Name = "Electric Ring", Damage = 50 });
+            //Name = , Damage = 50, new Attack("Electric Ring", 50)
+            Attacks.Add(new Attack("Electric Ring", 50));
+            Resistances.Add(new Resistance(Type, 20));
+            Weaknesses.Add(new Weakness(Type, 1.5F));
             /*
              * , new Attack("Slash", 30), new Resistance(energytype, 20), new Weakness(energytype, 1.5F)
              */
@@ -73,9 +75,11 @@ namespace Pokebattle
 
     public class Charmeleon : pokemon
     {
-        public Charmeleon():base("Charmeleon", 60, new Energytype("Fire", "Lightning", "Water"), new Attack("Flare", 30))
+        public Charmeleon():base("Charmeleon", 60, new Energytype("Fire", "Lightning", "Water"))
         {
-
+            Attacks.Add(new Attack("Flare", 30));
+            Resistances.Add(new Resistance(Type, 10));
+            Weaknesses.Add(new Weakness(Type, 2.0F));
         }
     }
 }
