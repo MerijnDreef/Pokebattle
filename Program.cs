@@ -15,9 +15,11 @@ namespace Pokebattle
             //var resistance = new Resistance(pokemon.Type, 20);
             //var weakness = new Weakness(pokemon.Type, 1.5F);
             Pokemons.Add(pokemon);
+            Pokemons.Add(pokemonHostile);
             Console.WriteLine("I summon the pokemon and their stats are");
             Console.ReadLine();
-            Console.WriteLine($"{pokemon.Name}, {pokemon.Health}, {pokemon.Type.Type}, {pokemon.Name}, {pokemon.Attacks.Damage}, {pokemon.Type.TypeResist}, {pokemon.Resistances.Resisting}, {pokemon.Type.TypeWeak}, {pokemon.Weaknesses.Multiplier}");
+            Console.WriteLine($"{pokemon.Name}, {pokemon.Health}, {pokemon.Type.Type}, {pokemon.Attacks[0]}, {pokemon.Attacks[1]}, {pokemon.Type.TypeResist}, {pokemon.Resistances[0]}, {pokemon.Type.TypeWeak}, {pokemon.Weaknesses[0]}");
+            pokemon.Damage(pokemonHostile, pokemonHostile.Type, pokemon.Attacks[0]);
             Console.ReadKey();
         }
 

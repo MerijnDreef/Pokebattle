@@ -29,10 +29,10 @@ namespace Pokebattle
             Health -= (Attack * getAttackMultiplier(type));
         }
 
-        public void learnAttack(Attack attack)
+        /*public void learnAttack(Attack attack)
         {
             Attacks.Add(attack);
-        }
+        }*/
 
         public int getAttackMultiplier(Energytype type)
         {
@@ -57,14 +57,10 @@ namespace Pokebattle
     {
         public Pikachu():base("Pikachu", 60, new Energytype("Lightning", "Fighting", "Fire"))
         {
-
-            //Name = , Damage = 50, new Attack("Electric Ring", 50)
             Attacks.Add(new Attack("Electric Ring", 50));
+            Attacks.Add(new Attack("Pika Punch", 20));
             Resistances.Add(new Resistance(Type, 20));
             Weaknesses.Add(new Weakness(Type, 1.5F));
-            /*
-             * , new Attack("Slash", 30), new Resistance(energytype, 20), new Weakness(energytype, 1.5F)
-             */
 
         }
         /*public override void play(int happiness)
@@ -77,6 +73,7 @@ namespace Pokebattle
     {
         public Charmeleon():base("Charmeleon", 60, new Energytype("Fire", "Lightning", "Water"))
         {
+            Attacks.Add(new Attack("Head Butt", 10));
             Attacks.Add(new Attack("Flare", 30));
             Resistances.Add(new Resistance(Type, 10));
             Weaknesses.Add(new Weakness(Type, 2.0F));
