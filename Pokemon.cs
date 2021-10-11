@@ -22,11 +22,19 @@ namespace Pokebattle
             Weaknesses = weaknesses ?? new List<Weakness>();
         }
 
-        public void Damage(string PokemonDamage, Energytype type, int Attack) {
+        public void Damage(pokemon reciever, Energytype type, Attack attack) {
             // the string is for the one that TAKES damage and with what attack, now to put it in code :I
             // I need to check for EnergyType here, but how to write that here
-            
-            Health -= (Attack * getAttackMultiplier(type));
+            if (reciever.Type.TypeWeak == type.Type)
+            {
+                reciever.Health -= (attack.Damage * (int)reciever.Weaknesses[0].Multiplier);
+            } else if(reciever.Type.TypeResist == type.Type)
+            {
+                reciever.Health -= (attack.Damage - reciever.Resistances[0].Resisting);
+            } else
+            {
+                reciever.Health -= (attack.Damage);
+            }
         }
 
         /*public void learnAttack(Attack attack)
@@ -34,7 +42,7 @@ namespace Pokebattle
             Attacks.Add(attack);
         }*/
 
-        public int getAttackMultiplier(Energytype type)
+        /*public int getAttackMultiplier(Energytype type)
         {
             foreach(var resistance in Resistances)
             {
@@ -46,7 +54,7 @@ namespace Pokebattle
             }
 
             return 1;
-        }
+        }*/
         /*public virtual void play(int happiness)
         {
             Health *= happiness;

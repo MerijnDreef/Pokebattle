@@ -18,8 +18,10 @@ namespace Pokebattle
             Pokemons.Add(pokemonHostile);
             Console.WriteLine("I summon the pokemon and their stats are");
             Console.ReadLine();
-            Console.WriteLine($"{pokemon.Name}, {pokemon.Health}, {pokemon.Type.Type}, {pokemon.Attacks[0]}, {pokemon.Attacks[1]}, {pokemon.Type.TypeResist}, {pokemon.Resistances[0]}, {pokemon.Type.TypeWeak}, {pokemon.Weaknesses[0]}");
-            pokemon.Damage(pokemonHostile, pokemonHostile.Type, pokemon.Attacks[0]);
+            Console.WriteLine($"{pokemon.Name}, {pokemon.Health}, {pokemon.Type.Type}, {pokemon.Attacks[0].Name}, {pokemon.Attacks[1].Name}, {pokemon.Type.TypeResist}, {pokemon.Resistances[0].Resisting}, {pokemon.Type.TypeWeak}, {pokemon.Weaknesses[0].Multiplier}");
+            pokemon.Damage(pokemonHostile, pokemon.Type, pokemon.Attacks[0]);
+            pokemon.Damage(pokemon, pokemonHostile.Type, pokemonHostile.Attacks[1]);
+            Console.WriteLine($"{pokemonHostile.Health}");
             Console.ReadKey();
         }
 
