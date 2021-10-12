@@ -21,44 +21,24 @@ namespace Pokebattle
             Resistances = resistances ?? new List<Resistance>();
             Weaknesses = weaknesses ?? new List<Weakness>();
         }
-
-        public void Damage(pokemon reciever, Energytype type, Attack attack) {
-            // the string is for the one that TAKES damage and with what attack, now to put it in code :I
-            // I need to check for EnergyType here, but how to write that here
-            if (reciever.Type.TypeWeak == type.Type)
+        /*
+         * what it does first is, it looks if the weakness energytype is the same energytype as pokemon it's fighting
+         * the second one checks if the resistance energytype is the same as the other pokemons energytype
+         * the last thing will just attack if the other ones didn't work
+         *
+         */
+        public void Damage(pokemon receiver, Energytype type, Attack attack) {
+            if (receiver.Type.TypeWeak == type.Type)
             {
-                reciever.Health -= (attack.Damage * (int)reciever.Weaknesses[0].Multiplier);
-            } else if(reciever.Type.TypeResist == type.Type)
+                receiver.Health -= (int)(attack.Damage * receiver.Weaknesses[0].Multiplier);
+            } else if(receiver.Type.TypeResist == type.Type)
             {
-                reciever.Health -= (attack.Damage - reciever.Resistances[0].Resisting);
+                receiver.Health -= (attack.Damage - receiver.Resistances[0].Resisting);
             } else
             {
-                reciever.Health -= (attack.Damage);
+                receiver.Health -= (attack.Damage);
             }
         }
-
-        /*public void learnAttack(Attack attack)
-        {
-            Attacks.Add(attack);
-        }*/
-
-        /*public int getAttackMultiplier(Energytype type)
-        {
-            foreach(var resistance in Resistances)
-            {
-                if (resistance.TypeResist == type) return resistance.Resisting;
-            }
-            foreach(var weakness in Weaknesses)
-            {
-                if (weakness.TypeWeak == type) return (int)weakness.Multiplier;
-            }
-
-            return 1;
-        }*/
-        /*public virtual void play(int happiness)
-        {
-            Health *= happiness;
-        }*/
     }
 
     public class Pikachu : pokemon
@@ -69,12 +49,7 @@ namespace Pokebattle
             Attacks.Add(new Attack("Pika Punch", 20));
             Resistances.Add(new Resistance(Type, 20));
             Weaknesses.Add(new Weakness(Type, 1.5F));
-
         }
-        /*public override void play(int happiness)
-        {
-            base.play(happiness);
-        }*/
     }
 
     public class Charmeleon : pokemon
