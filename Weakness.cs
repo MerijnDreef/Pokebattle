@@ -2,12 +2,12 @@ namespace Pokebattle
 {
     public class Weakness 
     {
-        public Weakness(Energytype typeWeak, float multiplier)
+        public Weakness(string typeWeak, float multiplier)
         {
             TypeWeak = typeWeak;
             Multiplier = multiplier;
         }
-        public Energytype TypeWeak { get; set; }
+        public string TypeWeak { get; private set; }
         public float Multiplier { get; set; }
 
     }

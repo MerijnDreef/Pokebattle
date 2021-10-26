@@ -3,12 +3,12 @@ namespace Pokebattle
 {
     public class Resistance 
     {
-        public Resistance(Energytype typeResist, int resisting)
+        public Resistance(string typeResist, int resisting)
         {
             TypeResist = typeResist;
             Resisting = resisting;
         }
-        public Energytype TypeResist { get; private set; }
+        public string TypeResist { get; private set; }
         public int Resisting { get; set; }
 
     }

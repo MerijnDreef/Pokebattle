@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+
 namespace Pokebattle
 {
     public class Pokemon 
@@ -21,6 +23,7 @@ namespace Pokebattle
             Resistances = resistances;
             Weaknesses = weaknesses;
         }
+
         /*
          * what it does first is, it looks if the weakness energytype is the same energytype as pokemon it's fighting
          * the second one checks if the resistance energytype is the same as the other pokemons energytype
@@ -40,15 +43,18 @@ namespace Pokebattle
             }
         }
 
-        public void getAttack()
+        public List<Attack> GetAttacks()
         {
-
+            return Attacks;
         }
+
+        // GetLivePokemon will check if the pokemons health isn't equal to 0, and if that is the case it will continue
+        //public static List<Pokemon> GetLivePokemon() => Program.Pokemons.Where(x => x.Health > 0).ToList();
     }
 
     public class Pikachu : Pokemon
     {
-        public Pikachu():base("Pikachu", 60, new Energytype("Lightning", "Fighting", "Fire"), new Resistance(Type, 20), new Weakness(Type, 1.5F))
+        public Pikachu():base("Pikachu", 60, new Energytype("Lightning", "Fighting", "Fire"), new Resistance(new Energytype("Lightning", "Fighting", "Fire").TypeResist, 20), new Weakness(new Energytype("Lightning", "Fighting", "Fire").TypeWeak, 1.5F))
         {
             Attacks.Add(new Attack("Electric Ring", 50));
             Attacks.Add(new Attack("Pika Punch", 20));
@@ -57,7 +63,7 @@ namespace Pokebattle
 
     public class Charmeleon : Pokemon
     {
-        public Charmeleon():base("Charmeleon", 60, new Energytype("Fire", "Lightning", "Water"), new Resistance(Type.TypeResist, 10), new Weakness(Type.TypeWeak, 2.0F))
+        public Charmeleon():base("Charmeleon", 60, new Energytype("Fire", "Lightning", "Water"), new Resistance(new Energytype("Lightning", "Fighting", "Fire").TypeResist, 10), new Weakness(new Energytype("Lightning", "Fighting", "Fire").TypeWeak, 2.0F))
         {
             Attacks.Add(new Attack("Head Butt", 10));
             Attacks.Add(new Attack("Flare", 30));

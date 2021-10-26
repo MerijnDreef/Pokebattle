@@ -12,8 +12,8 @@ namespace Pokebattle
             var pokemon = new Pikachu();
             var pokemonHostile = new Charmeleon();
 
-            Pokemons.Add(pokemon);
-            Pokemons.Add(pokemonHostile);
+            Game.Pokemons.Add(pokemon);
+            Game.Pokemons.Add(pokemonHostile);
 
             Console.WriteLine("press the Enter key to start the fight");
             Console.ReadLine();
@@ -21,10 +21,10 @@ namespace Pokebattle
             pokemonHostile.Damage(pokemon, 0);
             pokemon.Damage(pokemonHostile, 1);
 
-            Console.WriteLine($"Pikachu used {pokemon.Attacks[0].Name} on {pokemonHostile.Name} and lowered it's health to {pokemonHostile.Health}");
-            Console.WriteLine($"Charmeleon used {pokemonHostile.Attacks[1].Name} on {pokemon.Name} and lowered it's health to {pokemon.Health}");
+            Console.WriteLine($"Pikachu used {pokemon.GetAttacks()[0].Name} on {pokemonHostile.Name} and lowered it's health to {pokemonHostile.Health}");
+            Console.WriteLine($"Charmeleon used {pokemonHostile.GetAttacks()[1].Name} on {pokemon.Name} and lowered it's health to {pokemon.Health}");
             Console.WriteLine("The pokemon that are alive are:");
-            foreach (var pok in GetLivePokemon())
+            foreach (var pok in Game.GetLivePokemon())
             {
                 Console.WriteLine($"{pok.Name}");
             }
@@ -32,22 +32,20 @@ namespace Pokebattle
             pokemonHostile.Damage(pokemon, 1);
             pokemon.Damage(pokemonHostile, 0);
 
-            Console.WriteLine($"Pikachu used {pokemon.Attacks[1].Name} on {pokemonHostile.Name} and lowered it's health to {pokemonHostile.Health}");
-            Console.WriteLine($"Charmeleon used {pokemonHostile.Attacks[0].Name} on {pokemon.Name} and lowered it's health to {pokemon.Health}");
+            Console.WriteLine($"Pikachu used {pokemon.GetAttacks()[1].Name} on {pokemonHostile.Name} and lowered it's health to {pokemonHostile.Health}");
+            Console.WriteLine($"Charmeleon used {pokemonHostile.GetAttacks()[0].Name} on {pokemon.Name} and lowered it's health to {pokemon.Health}");
             Console.WriteLine("The pokemon that are alive are:");
-            foreach (var pok in GetLivePokemon())
+            foreach (var pok in Game.GetLivePokemon())
             {
                 Console.WriteLine($"{pok.Name}");
             }
 
             Console.ReadKey();
         }
-
-        // GetLivePokemon will check if the pokemons health isn't equal to 0, and if that is the case it will continue
-        static List<Pokemon> GetLivePokemon() => Pokemons.Where(x => x.Health > 0).ToList();
+       
+        List<Pokemon> tmpPok = Game.GetLivePokemon();
 
         // this puts the pokemon in a easy to acces list
-        static List<Pokemon> Pokemons = new List<Pokemon>();
-
+        //public static List<Pokemon> Pokemons = new List<Pokemon>();
     }
 }
