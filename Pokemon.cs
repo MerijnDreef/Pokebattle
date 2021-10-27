@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Pokebattle
 {
@@ -13,28 +12,27 @@ namespace Pokebattle
         protected Resistance Resistances { get; set; }
         protected Weakness Weaknesses { get; set; }
 
-        public Pokemon(string name, int hitpoints, Energytype energytype, List<Attack> attacks, Resistance resistances, Weakness weaknesses)
+        public Pokemon(string name, int hitpoints, Energytype energytype, Resistance resistances, Weakness weaknesses)
         {
             Name = name;
             HitPoints = hitpoints;
             Health = hitpoints;
             Type = energytype;
-            Attacks = attacks; 
+            Attacks = new List<Attack>(); 
             Resistances = resistances;
             Weaknesses = weaknesses;
         }
 
         /*
-         * what it does first is, it looks if the weakness energytype is the same energytype as pokemon it's fighting
+         * what it does first is, it looks if the weakness energytype is the same energytype as the pokemon it's fighting
          * the second one checks if the resistance energytype is the same as the other pokemons energytype
-         * the last thing will just attack if the other ones didn't work
-         *
+         * the last one will just attack if the other ones didn't work, a failsafe basically
          */
         public void Damage(Pokemon dealer, int attack) {
             if (Type.TypeWeak == dealer.Type.Type)
             {
                 Health -= (int)(dealer.Attacks[attack].Damage * Weaknesses.Multiplier);
-            } else if(Type.TypeResist == Type.Type)
+            } else if(Type.TypeResist == dealer.Type.Type)
             {
                 Health -= (dealer.Attacks[attack].Damage - Resistances.Resisting);
             } else
@@ -47,9 +45,6 @@ namespace Pokebattle
         {
             return Attacks;
         }
-
-        // GetLivePokemon will check if the pokemons health isn't equal to 0, and if that is the case it will continue
-        //public static List<Pokemon> GetLivePokemon() => Program.Pokemons.Where(x => x.Health > 0).ToList();
     }
 
     public class Pikachu : Pokemon
@@ -63,7 +58,7 @@ namespace Pokebattle
 
     public class Charmeleon : Pokemon
     {
-        public Charmeleon():base("Charmeleon", 60, new Energytype("Fire", "Lightning", "Water"), new Resistance(new Energytype("Lightning", "Fighting", "Fire").TypeResist, 10), new Weakness(new Energytype("Lightning", "Fighting", "Fire").TypeWeak, 2.0F))
+        public Charmeleon():base("Charmeleon", 60, new Energytype("Fire", "Lightning", "Water"), new Resistance(new Energytype("Fire", "Lightning", "Water").TypeResist, 10), new Weakness(new Energytype("Fire", "Lightning", "Water").TypeWeak, 2.0F))
         {
             Attacks.Add(new Attack("Head Butt", 10));
             Attacks.Add(new Attack("Flare", 30));

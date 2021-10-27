@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pokebattle
 {
@@ -10,7 +7,7 @@ namespace Pokebattle
     {  
         // this puts the pokemon in a easy to acces list
         public static List<Pokemon> Pokemons = new List<Pokemon>();
-
+        // GetLivePokemon will check if the pokemons health isn't equal to 0, and if that is the case it will continue
         public static List<Pokemon> GetLivePokemon() 
         {
             return Pokemons.Where(p => p.Health > 0).ToList();

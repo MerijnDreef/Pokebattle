@@ -1,4 +1,3 @@
-
 namespace Pokebattle
 {
     public class Attack 
