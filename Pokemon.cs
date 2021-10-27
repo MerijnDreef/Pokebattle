@@ -12,6 +12,8 @@ namespace Pokebattle
         protected Resistance Resistances { get; set; }
         protected Weakness Weaknesses { get; set; }
 
+        protected static int LivePokemon = 0;
+
         public Pokemon(string name, int hitpoints, Energytype energytype, Resistance resistances, Weakness weaknesses)
         {
             Name = name;
@@ -21,6 +23,7 @@ namespace Pokebattle
             Attacks = new List<Attack>(); 
             Resistances = resistances;
             Weaknesses = weaknesses;
+            LivePokemon++;
         }
 
         /*
@@ -45,6 +48,11 @@ namespace Pokebattle
         {
             return Attacks;
         }
+        public static int GetLivePokemon()
+        {
+            return LivePokemon;
+        }
+
     }
 
     public class Pikachu : Pokemon
