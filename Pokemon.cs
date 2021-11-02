@@ -30,17 +30,30 @@ namespace Pokebattle
          * what it does first is, it looks if the weakness energytype is the same energytype as the pokemon it's fighting
          * the second one checks if the resistance energytype is the same as the other pokemons energytype
          * the last one will just attack if the other ones didn't work, a failsafe basically
+         * also, I added the Health check here, it removes 1 from LivePokemon if Health is below or equal to 0
          */
         public void Damage(Pokemon dealer, int attack) {
             if (Type.TypeWeak == dealer.Type.Type)
             {
                 Health -= (int)(dealer.Attacks[attack].Damage * Weaknesses.Multiplier);
+                if (Health <= 0)
+                {
+                    LivePokemon--;
+                }
             } else if(Type.TypeResist == dealer.Type.Type)
             {
                 Health -= (dealer.Attacks[attack].Damage - Resistances.Resisting);
+                if (Health <= 0)
+                {
+                    LivePokemon--;
+                }
             } else
             {
                 Health -= (dealer.Attacks[attack].Damage);
+                if (Health <= 0)
+                {
+                    LivePokemon--;
+                }
             }
         }
 
@@ -48,6 +61,7 @@ namespace Pokebattle
         {
             return Attacks;
         }
+
         public static int GetLivePokemon()
         {
             return LivePokemon;

@@ -12,21 +12,15 @@ namespace Pokebattle
             var pokemon = new Pikachu();
             var pokemonHostile = new Charmeleon();
 
-            //Game.Pokemons.Add(pokemon);
-            //Game.Pokemons.Add(pokemonHostile);
-
             Console.WriteLine("press the Enter key to start the fight");
             Console.ReadLine();
             pokemonHostile.Damage(pokemon, 0);
             pokemon.Damage(pokemonHostile, 1);
+
             Console.WriteLine($"{Pokemon.GetLivePokemon()}");
             Console.WriteLine($"Pikachu used {pokemon.GetAttacks()[0].Name} on {pokemonHostile.Name} and lowered it's health to {pokemonHostile.Health}");
             Console.WriteLine($"Charmeleon used {pokemonHostile.GetAttacks()[1].Name} on {pokemon.Name} and lowered it's health to {pokemon.Health}");
             Console.WriteLine("The pokemon that are alive are:");
-           // foreach (var pok in Game.GetLivePokemon())
-            //{
-            //    Console.WriteLine($"{pok.Name}");
-            //}
             Console.WriteLine($"{Pokemon.GetLivePokemon()}");
 
             pokemonHostile.Damage(pokemon, 1);
@@ -35,15 +29,10 @@ namespace Pokebattle
             Console.WriteLine($"Pikachu used {pokemon.GetAttacks()[1].Name} on {pokemonHostile.Name} and lowered it's health to {pokemonHostile.Health}");
             Console.WriteLine($"Charmeleon used {pokemonHostile.GetAttacks()[0].Name} on {pokemon.Name} and lowered it's health to {pokemon.Health}");
             Console.WriteLine("The pokemon that are alive are:");
-            //foreach (var pok in Game.GetLivePokemon())
-            //{
-            //    Console.WriteLine($"{pok.Name}");
-            //}
             Console.WriteLine($"{Pokemon.GetLivePokemon()}");
 
             Console.ReadKey();
         }
-
-        //List<Pokemon> tmpPok = Game.GetLivePokemon();
+        //public static List<Pokemon> Pokemons = new List<Pokemon>();
     }
 }
