@@ -36,24 +36,16 @@ namespace Pokebattle
             if (Type.TypeWeak == dealer.Type.Type)
             {
                 Health -= (int)(dealer.Attacks[attack].Damage * Weaknesses.Multiplier);
-                if (Health <= 0)
-                {
-                    LivePokemon--;
-                }
             } else if(Type.TypeResist == dealer.Type.Type)
             {
                 Health -= (dealer.Attacks[attack].Damage - Resistances.Resisting);
-                if (Health <= 0)
-                {
-                    LivePokemon--;
-                }
             } else
             {
                 Health -= (dealer.Attacks[attack].Damage);
-                if (Health <= 0)
-                {
-                    LivePokemon--;
-                }
+            }
+            if (Health <= 0)
+            {
+                LivePokemon--;
             }
         }
 
